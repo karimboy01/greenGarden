@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Голосование за природу</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .login-box {
+      max-width: 300px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .login-box button:hover {
+      background: #1b5e20;
+    }
+
+    .hidden { display: none; }
+
+    .places {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+    .card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      overflow: hidden;
+    }
+    .card img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+    }
+    .info {
+      flex: 1;
+      padding: 15px;
+    }
+    .info h3 {
+      margin: 0 0 8px;
+      color: #2e7d32;
+    }
+    .info p {
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: #444;
+    }
+    .info button {
+      background: #2e7d32;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .info button:hover {
+      background: #1b5e20;
+    }
+
+    .rating {
+      width: 150px;
+      padding: 10px;
+    }
+    .bar-container {
+      background: #eee;
+      border-radius: 8px;
+      height: 20px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .bar {
+      height: 100%;
+      background: #2e7d32;
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+    nav {
+  display: flex;
+  padding: 12px 20px;
+  background: linear-gradient(90deg, #d9fce3, #f0fdf4); /* yumshoq yashil fon */
+  border-bottom: 1px solid #b3e5c3;
+}
+
+nav a {
+  text-decoration: none;
+  color: #2f3e2f;        /* barg rangidagi matn */
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+  background: #bbf7d0;   /* och yashil hover */
+  color: #166534;        /* to‘q yashil */
+}
+
+nav a:active {
+  background: #86efac;   /* bosilganda kuchliroq yashil */
+}
+
+  </style>
+</head>
+<body>
+  <header>Голосование за места в Узбекистане 🌍</header>
+  <nav>
+    <a href="index.html">Bosh sahifa</a>
+    <a href="problems.html">Problemalar</a>
+    <a href="aboutus.html">Biz haqimizda</a>
+    <a href="golosavaniye.html">Ovoz berish</a>
+</nav>
+
+
+
+  <div class="places hidden" id="places">
+    <!-- Карточки -->
+    <div class="card">
+      <img src="image copy 5.png" alt="Пустыня Кызылкум">
+      <div class="info">
+        <h3>Пустыня Кызылкум</h3>
+        <p>Если выберут: создадим заповедник для редких животных пустыни.</p>
+        <button onclick="vote(0)">Дать голос</button>
+      </div>
+      <div class="rating">
+        <span>Голоса: <span id="votes0">0</span></span>
+        <div class="bar-container">
+          <div class="bar" id="bar0"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image copy 7.png" alt="Заповедник Заамин">
+      <div class="info">
+        <h3>Заповедник Заамин</h3>
+        <p>Если выберут: построим новые места для защиты птиц.</p>
+        <button onclick="vote(1)">Дать голос</button>
+      </div>
+      <div class="rating">
+        <span>Голоса: <span id="votes1">0</span></span>
+        <div class="bar-container">
+          <div class="bar" id="bar1"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image copy 8.png" alt="Пустыня Коракум">
+      <div class="info">
+        <h3>Пустыня Коракум</h3>
+        <p>Если выберут: создадим проект для защиты редких растений.</p>
+        <button onclick="vote(2)">Дать голос</button>
+      </div>
+      <div class="rating">
+        <span>Голоса: <span id="votes2">0</span></span>
+        <div class="bar-container">
+          <div class="bar" id="bar2"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image copy 9.png" alt="Аралское море">
+      <div class="info">
+        <h3>Аралское море</h3>
+        <p>Если выберут: поддержим проект по очистке воды и восстановлению экосистемы.</p>
+        <button onclick="vote(3)">Дать голос</button>
+      </div>
+      <div class="rating">
+        <span>Голоса: <span id="votes3">0</span></span>
+        <div class="bar-container">
+          <div class="bar" id="bar3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let votes = [0, 0, 0, 0];
+
+    function login() {
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+      if (email && password) {
+        document.getElementById("loginBox").classList.add("hidden");
+        document.getElementById("places").classList.remove("hidden");
+      } else {
+        alert("Введите email и пароль!");
+      }
+    }
+
+    function vote(index) {
+      votes[index]++;
+      document.getElementById("votes" + index).innerText = votes[index];
+      updateBars();
+    }
+
+    function updateBars() {
+      let total = votes.reduce((a, b) => a + b, 0);
+      for (let i = 0; i < votes.length; i++) {
+        let percent = total > 0 ? (votes[i] / total) * 100 : 0;
+        document.getElementById("bar" + i).style.width = percent + "%";
+      }
+    }
+  </script>
+</body>
+</html>

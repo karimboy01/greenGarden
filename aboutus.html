@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Biz haqimizda - Yashil Makonlar loyihasi va ekologiya haqida.">
+    <title>Biz Haqimizda - Yashil Makonlar</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Base reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+            padding: 0 10px;
+        }
+
+        header {
+            background-color: #2d6a4f;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.8;
+        }
+
+        nav {
+            background-color: #4c9a2a;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px 0;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 8px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #3c7a2b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .about-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-content h2 {
+            font-size: 2.5em;
+            color: #2d6a4f;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .about-team {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .team-member {
+            background-color: #f0f4f1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 30%;
+            margin-bottom: 20px;
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .team-member h3 {
+            font-size: 1.5em;
+            color: #2d6a4f;
+        }
+
+        .team-member p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        footer {
+            background-color: #2d6a4f;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        footer a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            .about-team {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .team-member {
+                width: 80%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Yashil Makonlar - Biz Haqimizda</h1>
+    <p>Bizning maqsadimiz - ekologiya va yashil makonlar haqida ongli jamiyatni shakllantirish</p>
+</header>
+
+<nav>
+    <a href="index.html">Bosh sahifa</a>
+    <a href="problems.html">Problemalar</a>
+    <a href="aboutus.html">Biz haqimizda</a>
+     <a href="golosavaniye.html">Ovoz berish</a>
+</nav>
+
+<div class="container">
+    <section class="about-content">
+        <h2>Bizning Missiyamiz</h2>
+        <p>Yashil Makonlar — bu ekologik muammolarni hal qilish va yashil hududlarni yaratish bo'yicha keng qamrovli platformadir. Bizning maqsadimiz ekologiya va tabiatni asrash, yashil makonlar yaratish, va odamlarni bu jarayonlarda faol ishtirok etishga undashdir.</p>
+
+        <h2>Ekologiya bo'yicha Ta'lim</h2>
+        <p>Biz yoshlarni ekologik ongni rivojlantirishga, tabiiy resurslarni tejashga va atrof-muhitni himoya qilishga rag'batlantiramiz. Shuningdek, ekologik muammolarni hal qilish uchun ijtimoiy tarmoqlar orqali faoliyat yuritamiz.</p>
+
+        <h2>Jamoamiz</h2>
+        <div class="about-team">
+            <div class="team-member">
+                <img src="image copy 5.png" alt="Jamoa A'zosi 1">
+                <h3>John Doe</h3>
+                <p>Ekologiya bo'yicha mutaxassis va loyiha rahbari. O'zining uzoq yillik tajribasi bilan atrof-muhitni muhofaza qilishga hissa qo'shmoqda.</p>
+            </div>
+            <div class="team-member">
+                <img src="image copy 6.png" alt="Jamoa A'zosi 2">
+                <h3>Jane Smith</h3>
+                <p>Tabiatni asrash bo'yicha konsultant. U ekologik ta'limni kengaytirish va yoshlarni ongli etish uchun ishlaydi.</p>
+            </div>
+            <div class="team-member">
+                <img src="image copy 7.png" alt="Jamoa A'zosi 3">
+                <h3>Otabek Tashkent</h3>
+                <p>Ekologik tashabbuslarni amalga oshiruvchi rahbar. Yashil makonlarni rivojlantirishda ko'plab loyihalarni amalga oshirgan.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+</body>
+</html>

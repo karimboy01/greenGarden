@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Платёжные кнопки — Visa, MasterCard, Click, Payme, BTS</title>
+  <meta name="description" content="Простая страница с кнопками для перехода на официальные сайты платежных систем: Visa, MasterCard, Click, Payme и BTS." />
+  <style>
+:root{
+  --bg1: #e8f5e9;     /* och yashil (fon) */
+  --bg2: #f0fdf4;     /* oq-yashil (fon gradient) */
+  --card: #ffffff;    /* oq card */
+  --text: #2e3d29;    /* to'q-yashil matn */
+  --muted: #6b7b6b;   /* kulrang-yashil yozuv */
+  --accent: #3c9a5f;  /* barg-yashil accent */
+  --accent2: #86c995; /* ochroq yashil accent */
+  --ring: rgba(60, 154, 95, 0.4);
+}
+
+body {
+  margin:0;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(160deg, var(--bg1), var(--bg2));
+  color:var(--text);
+}
+
+.wrapper{
+  min-height:100%;
+  display:grid;
+  place-items:center;
+  padding:24px;
+}
+
+.card{
+  width:min(880px, 100%);
+  background:linear-gradient(180deg, #ffffff, #f9fdf9);
+  border:1px solid rgba(60,154,95,.2);
+  border-radius:20px;
+  box-shadow: 0 6px 20px rgba(60,154,95,0.15);
+  padding:28px; 
+  transition: transform .2s ease;
+}
+.card:hover{
+  transform: translateY(-3px);
+}
+
+h1 {
+  font-size:clamp(20px, 2.4vw, 28px);
+  margin:0;
+  color:var(--accent);
+}
+p.lead {
+  margin:6px 0 18px 0;
+  color:var(--muted);
+}
+
+.topbar {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:18px;
+}
+
+.back-btn {
+  border:1px solid rgba(60,154,95,.3);
+  background:var(--bg2);
+  color:var(--accent);
+  padding:10px 14px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:600;
+  transition: background .2s ease, border-color .2s ease, transform .06s ease;
+}
+.back-btn:hover {
+  background:#d1fae5;
+  border-color:var(--accent);
+}
+.back-btn:active {
+  transform:translateY(1px);
+}
+.back-btn:focus {
+  outline:none;
+  box-shadow:0 0 0 4px var(--ring);
+}
+
+.grid {
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:14px;
+}
+@media (min-width:720px){
+  .grid{grid-template-columns: repeat(3, minmax(0, 1fr));}
+}
+
+.pay-btn {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  text-decoration:none;
+  background: linear-gradient(180deg, #f4fff7, #e8f6ec);
+  border:1px solid rgba(60,154,95,.25);
+  border-radius:14px;
+  padding:16px 14px; 
+  font-size:16px;
+  font-weight:700;
+  color:var(--text);
+  transition: transform .08s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.pay-btn:hover {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, #ffffff, #ecfdf5);
+  box-shadow: 0 8px 20px rgba(60,154,95,0.15);
+}
+.pay-btn:active {
+  transform:translateY(1px);
+}
+.pay-btn:focus {
+  outline:none;
+  box-shadow:0 0 0 4px var(--ring);
+}
+
+.pay-btn .dot {
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background:var(--accent);
+}
+
+.badge {
+  font-size:12px;
+  font-weight:700;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(60,154,95,.3);
+  color:var(--muted);
+  background:#f0fdf4;
+}
+
+.footer {
+  margin-top:18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:var(--muted);
+  font-size:12px;
+}
+nav {
+  display: flex;
+  padding: 12px 20px;
+  background: linear-gradient(90deg, #d9fce3, #f0fdf4); /* yumshoq yashil fon */
+  border-bottom: 1px solid #b3e5c3;
+}
+
+nav a {
+  text-decoration: none;
+  color: #2f3e2f;        /* barg rangidagi matn */
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+  background: #bbf7d0;   /* och yashil hover */
+  color: #166534;        /* to‘q yashil */
+}
+
+nav a:active {
+  background: #86efac;   /* bosilganda kuchliroq yashil */
+}
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <main class="card" role="main">
+      <div class="topbar">
+<nav>
+    <a href="index.html">Orqaga</a>
+    </nav>
+ <span class="badge">Официальные ссылки</span>
+      </div>
+
+      <header>
+        <h1>Выберите платёжную систему</h1>
+        <p class="lead">Нажмите на кнопку, чтобы перейти на официальный сайт. Ссылки открываются в новой вкладке.</p>
+      </header>
+
+      <section class="grid" aria-label="Список платёжных систем">
+        <a class="pay-btn visa" href="https://www.visa.com/" target="_blank" rel="noopener noreferrer" aria-label="Visa — официальный сайт">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Visa</span>
+        </a>
+
+        <a class="pay-btn mc" href="https://www.mastercard.com/" target="_blank" rel="noopener noreferrer" aria-label="Mastercard — официальный сайт">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Mastercard</span>
+        </a>
+
+        <a class="pay-btn click" href="https://click.uz/" target="_blank" rel="noopener noreferrer" aria-label="Click — официальный сайт">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Click</span>
+        </a>
+
+        <a class="pay-btn payme" href="https://payme.uz/" target="_blank" rel="noopener noreferrer" aria-label="Payme — официальный сайт">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Payme</span>
+        </a>
+
+        <a class="pay-btn bts" href="https://www.btcbank.by/" target="_blank" rel="noopener noreferrer" aria-label="BTS Bank — официальный сайт">
+          <span class="dot" aria-hidden="true"></span>
+          <span>BTC</span>
+        </a>
+          <a class="pay-btn bts" href="https://www.sberbank.ru/ru/person_new?segment=all" target="_blank" rel="noopener noreferrer" aria-label="BTS Bank — официальный сайт">
+          <span class="dot" aria-hidden="true"></span>
+          <span>сбербанк</span>
+        </a>
+            <a class="pay-btn bts" href="https://www.newyorkfed.org/" target="_blank" rel="noopener noreferrer" aria-label="BTS Bank — официальный сайт">
+          <span class="dot" aria-hidden="true"></span>
+          <span>NewYork.bank</span>
+        </a>
+        
+      </section>
+
+      <p class="hint">Если вы имели в виду другую систему под названием «BTS», скажите — заменю ссылку.</p>
+
+      <div class="footer">
+        <span>© 2025 — Платёжные ссылки</span>
+        <span>Безопасно: все переходы ведут на официальные сайты</span>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function goBack(){
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        // Если нет истории — просто прокрутим наверх или можем показать сообщение
+        window.location.hash = "#top";
+      }
+    }
+  </script>
+</body>
+</html>
